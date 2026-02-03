@@ -22,10 +22,10 @@ public sealed class StringCalculatorTests
     }
 
     [Fact]
-    public void CommaSeparated_Sums()
+    public void CommaSeparated_Sums_FinalMode_UpperBound1000()
     {
-        var calc = Create(new CalculatorOptions { DenyNegatives = false });
-        Assert.Equal(5001, calc.Add("1,5000"));
+        var calc = Create(new CalculatorOptions { DenyNegatives = false, UpperBound = 1000 });
+        Assert.Equal(1, calc.Add("1,5000"));
     }
 
     [Fact]
